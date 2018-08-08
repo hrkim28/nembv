@@ -7,6 +7,11 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
+const mongoose = require('mongoose');
+const cfg = require('./cfg/cfg');
+const pg = require('./playGround');
+//const url = 'mongodb://nembv:nembv@cluster0-shard-00-00-iwlka.mongodb.net:27017,cluster0-shard-00-01-iwlka.mongodb.net:27017,cluster0-shard-00-02-iwlka.mongodb.net:27017/nembv?useNewUrlParser=true&ssl=true&replicaSet=Cluster0-shard-0&authSource=admin';
+
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -35,11 +40,11 @@ app.use(function(err, req, res, next) {
   res.send({ success: false, msg: err.message });
 });
 
-const mongoose = require('mongoose');
-const url = 'mongodb://nembv:nembv@cluster0-xxx.mongodb.net:27017,cluster0-xxx.mongodb.net:27017,cluster0-xxx.mongodb.net:27017/nembv?ssl=true&replicaSet=Cluster0-xxx&authSource=admin';
-mongoose.connect(url, (err) => {
-  if(err) return console.error(err);
+
+mongoose.connect(cfg.db.url, (err) => {
+  if (err) return console.error(err);
   console.log('mongoose connected');
+  pg.test.model();
 });
 
 module.exports = app;
