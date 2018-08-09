@@ -10,10 +10,10 @@
 <script>
 import top from '../layout/top'
 export default {
-    name: 'index',
-    components: {
-        top
-    }
+  name: 'index',
+  components: {
+    top
+  }
 }
 </script>
 
