@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Hello from '@/components/page/Hello'
 import index from '@/components/page/index'
 import intro from '@/components/page/intro'
 import e404 from '@/components/page/e404'
@@ -78,4 +78,4 @@ export default new Router({
       component: e404
     }
   ]
-})
+});
