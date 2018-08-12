@@ -12,6 +12,11 @@
       <b-collapse is-nav id="nav_collapse">
 
         <b-navbar-nav>
+          <b-nav-item-dropdown text="게시판">
+            <topItem link="talk" icon="sss">
+              잡담
+            </topItem>
+          </b-nav-item-dropdown>
           <b-nav-item-dropdown text="환경설정">
             <topItem link="company" icon="sss">
               회사 관리
